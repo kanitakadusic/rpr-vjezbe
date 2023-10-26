@@ -1,13 +1,18 @@
 package ba.unsa.etf.rpr;
 
 public class User extends Person {
-    private Account account;
+    private final int userId;
+    private static int id;
+
+    Account account;
 
     User(String firstname, String lastname) {
         super(firstname, lastname);
+        this.userId = ++id;
+        this.account = new Account();
     }
 
-    public Account getAccount() { return account; }
+    public int getUserId() { return this.userId; }
 
-    public void setAccount(Account account) { this.account = account; }
+    public Account getAccount() { return this.account; }
 }
