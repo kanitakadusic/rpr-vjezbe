@@ -1,13 +1,11 @@
 package ba.unsa.etf.rpr;
 
 import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        List<Double> nums = new ArrayList<>();
+        Statistics nums = new Statistics();
 
         for (;;) {
             System.out.print("enter number: ");
@@ -20,5 +18,10 @@ public class Main {
                 System.out.print(" > re-");
             }
         }
+
+        System.out.println(nums.min());
+        System.out.println(nums.max());
+        System.out.println(nums.mean());
+        System.out.println(nums.standardDeviation());
     }
 }
