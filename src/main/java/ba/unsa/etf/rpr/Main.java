@@ -6,16 +6,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Statistics nums = new Statistics();
+        String input;
 
-        for (;;) {
-            System.out.print("enter number: ");
-            String input = scanner.nextLine();
-            if (input.equals("stop")) break;
-
+        while (!(input = scanner.nextLine()).equals("stop")) {
             try {
                 nums.add(Double.parseDouble(input));
             } catch (NumberFormatException e) {
-                System.out.print(" > re-");
+                System.out.print("re-enter: ");
             }
         }
 
