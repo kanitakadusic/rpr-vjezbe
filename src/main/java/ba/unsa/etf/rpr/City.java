@@ -19,7 +19,7 @@ public enum City {
         this.code = code;
     }
 
-    public String getLabel() {
+    public String getCode() {
         return this.code;
     }
 }
