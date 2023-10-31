@@ -17,12 +17,20 @@ public class MobilePhoneNumber extends PhoneNumber {
     }
 
     @Override
-    public String toString() {
-        return "0" + this.getNetwork() + "/" + this.getPhoneNumber();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MobilePhoneNumber that)) return false;
+
+        return this.getPhoneNumber().equals(that.getPhoneNumber()) && this.getNetwork() == that.getNetwork();
     }
 
     @Override
     public int hashCode() {
-        return Integer.toString(this.network).hashCode();
+        return (this.getPhoneNumber() + this.getNetwork()).hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "0" + this.getNetwork() + "/" + this.getPhoneNumber();
     }
 }

@@ -16,8 +16,11 @@ abstract public class PhoneNumber {
     }
 
     @Override
-    abstract public String toString();
+    abstract public boolean equals(Object o);
 
     @Override
     abstract public int hashCode();
+
+    @Override
+    abstract public String toString();
 }

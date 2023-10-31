@@ -17,12 +17,20 @@ public class InternationalPhoneNumber extends PhoneNumber {
     }
 
     @Override
-    public String toString() {
-        return this.getState() + ".." + this.getPhoneNumber();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof InternationalPhoneNumber that)) return false;
+
+        return this.getPhoneNumber().equals(that.getPhoneNumber()) && this.getState().equals(that.getState());
     }
 
     @Override
     public int hashCode() {
-        return this.state.hashCode();
+        return (this.getPhoneNumber() + this.getState()).hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return this.getState() + ".." + this.getPhoneNumber();
     }
 }

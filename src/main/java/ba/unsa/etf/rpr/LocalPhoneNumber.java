@@ -17,12 +17,20 @@ public class LocalPhoneNumber extends PhoneNumber {
     }
 
     @Override
-    public String toString() {
-        return this.getCity().getCode() + "/" + this.getPhoneNumber();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof LocalPhoneNumber that)) return false;
+
+        return this.getPhoneNumber().equals(that.getPhoneNumber()) && this.getCity() == that.getCity();
     }
 
     @Override
     public int hashCode() {
-        return city.hashCode();
+        return (this.getPhoneNumber() + this.getCity()).hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return this.getCity().getCode() + "/" + this.getPhoneNumber();
     }
 }
