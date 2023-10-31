@@ -1,8 +1,8 @@
 package ba.unsa.etf.rpr;
 
-public interface PhoneNumber {
-    String print();
+abstract public class PhoneNumber {
+    abstract public String print();
 
     @Override
-    int hashCode();
+    abstract public int hashCode();
 }
