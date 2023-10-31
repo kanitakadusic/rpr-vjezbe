@@ -15,7 +15,8 @@ abstract public class PhoneNumber {
         this.phoneNumber = phoneNumber;
     }
 
-    abstract public String print();
+    @Override
+    abstract public String toString();
 
     @Override
     abstract public int hashCode();
