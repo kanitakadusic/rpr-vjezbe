@@ -18,7 +18,7 @@ public class LocalPhoneNumber extends PhoneNumber {
 
     @Override
     public String toString() {
-        return city.label + "/" + this.getPhoneNumber();
+        return this.getCity().getCode() + "/" + this.getPhoneNumber();
     }
 
     @Override
