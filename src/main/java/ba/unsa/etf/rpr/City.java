@@ -13,9 +13,13 @@ public enum City {
     SARAJEVO("033"),
     LIVNO("034");
 
-    public final String label;
+    public final String code;
 
-    City(String label) {
-        this.label = label;
+    City(String code) {
+        this.code = code;
+    }
+
+    public String getLabel() {
+        return this.code;
     }
 }
