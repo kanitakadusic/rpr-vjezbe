@@ -20,6 +20,14 @@ public class Phonebook {
     }
 
     /**
+     * Returns number of contacts in collection
+     * @return Integer value of number of contacts
+     */
+    public int size() {
+        return this.phonebook.size();
+    }
+
+    /**
      * Adds single contact to collection of contacts
      * @param name Contact name
      * @param phoneNumber Contact phone number
