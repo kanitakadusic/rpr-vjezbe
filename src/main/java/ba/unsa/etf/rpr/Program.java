@@ -129,8 +129,13 @@ public class Program {
                     System.out.print("    letter: ");
                     choice = input.nextLine();
 
-                    System.out.print("\nResult: ");
-                    System.out.print(Objects.requireNonNullElse(phonebook.onLetter(choice.charAt(0)), "No match found.\n"));
+                    try {
+                        System.out.print("\nResult: ");
+                        System.out.print(Objects.requireNonNullElse(phonebook.onLetter(choice.charAt(0)), "No match found.\n"));
+                    } catch (InvalidParametersException e) {
+                        System.out.println(e.getMessage());
+                    }
+
                     break;
                 }
 

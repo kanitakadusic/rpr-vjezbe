@@ -54,8 +54,10 @@ public class Phonebook {
      * Returns contacts whose name starts with specified letter
      * @param letter Desired letter
      * @return String of "/Name/ [/PhoneNumber/]" contacts or null if there is no match
+     * @throws InvalidParametersException In case the character is not a letter
      */
-    public String onLetter(char letter) {
+    public String onLetter(char letter) throws InvalidParametersException {
+        if (!Character.isLetter(letter)) throw new InvalidParametersException(letter + " is not a letter.");
         StringBuilder info = new StringBuilder();
 
         for (Map.Entry<PhoneNumber, String> set : this.phonebook.entrySet())
