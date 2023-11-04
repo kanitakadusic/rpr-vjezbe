@@ -3,6 +3,7 @@ package ba.unsa.etf.rpr;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.mockito.Mockito;
 
 class PhonebookTest {
     private Phonebook phonebook;
@@ -14,7 +15,7 @@ class PhonebookTest {
 
     @Test
     public void add() {
-        this.phonebook.add("Name", new MobilePhoneNumber(10, "123-456"));
+        this.phonebook.add("Name", Mockito.mock(PhoneNumber.class));
         assertEquals(1, this.phonebook.size());
     }
 
