@@ -1,63 +1,61 @@
 package ba.unsa.etf.rpr;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PhonebookTest {
+    private Phonebook phonebook;
 
-    @Test
-    void add() {
-        Phonebook phonebook = new Phonebook();
-        phonebook.add("Name", new MobilePhoneNumber(10, "123-456"));
-        assertEquals(1, phonebook.size());
+    @BeforeEach
+    public void beforeEachTest() {
+        this.phonebook = new Phonebook();
     }
 
     @Test
-    void getPhoneNumber() {
-        Phonebook phonebook = new Phonebook();
-        phonebook.add("Name", new MobilePhoneNumber(10, "123-456"));
-        assertEquals("010/123-456", phonebook.getPhoneNumber("Name"));
+    public void add() {
+        this.phonebook.add("Name", new MobilePhoneNumber(10, "123-456"));
+        assertEquals(1, this.phonebook.size());
     }
 
     @Test
-    void getPhoneNumberNoMatch() {
-        Phonebook phonebook = new Phonebook();
-        assertNull(phonebook.getPhoneNumber("Name"));
+    public void getPhoneNumber() {
+        this.phonebook.add("Name", new MobilePhoneNumber(10, "123-456"));
+        assertEquals("010/123-456", this.phonebook.getPhoneNumber("Name"));
     }
 
     @Test
-    void getName() {
-        Phonebook phonebook = new Phonebook();
-        phonebook.add("Name", new MobilePhoneNumber(10, "123-456"));
-        assertEquals("Name", phonebook.getName(new MobilePhoneNumber(10, "123-456")));
+    public void getPhoneNumberNoMatch() {
+        assertNull(this.phonebook.getPhoneNumber("Name"));
     }
 
     @Test
-    void getNameNoMatch() {
-        Phonebook phonebook = new Phonebook();
-        assertNull(phonebook.getName(new MobilePhoneNumber(10, "123-456")));
+    public void getName() {
+        this.phonebook.add("Name", new MobilePhoneNumber(10, "123-456"));
+        assertEquals("Name", this.phonebook.getName(new MobilePhoneNumber(10, "123-456")));
     }
 
     @Test
-    void onLetter() {
-        Phonebook phonebook = new Phonebook();
-        phonebook.add("Name", new MobilePhoneNumber(10, "123-456"));
+    public void getNameNoMatch() {
+        assertNull(this.phonebook.getName(new MobilePhoneNumber(10, "123-456")));
+    }
 
-        try { assertEquals("Name [010/123-456]\n", phonebook.onLetter('N')); }
+    @Test
+    public void onLetter() {
+        this.phonebook.add("Name", new MobilePhoneNumber(10, "123-456"));
+
+        try { assertEquals("Name [010/123-456]\n", this.phonebook.onLetter('N')); }
         catch (InvalidParametersException ignored) {}
     }
 
     @Test
-    void onLetterNoMatch() {
-        Phonebook phonebook = new Phonebook();
-
-        try { assertNull(phonebook.onLetter('N')); }
+    public void onLetterNoMatch() {
+        try { assertNull(this.phonebook.onLetter('N')); }
         catch (InvalidParametersException ignored) {}
     }
 
     @Test
-    void onLetterException() {
-        Phonebook phonebook = new Phonebook();
-        assertThrows(InvalidParametersException.class, () -> phonebook.onLetter('0'));
+    public void onLetterException() {
+        assertThrows(InvalidParametersException.class, () -> this.phonebook.onLetter('0'));
     }
 }
