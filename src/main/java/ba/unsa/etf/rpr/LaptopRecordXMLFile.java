@@ -1,5 +1,8 @@
 package ba.unsa.etf.rpr;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
 import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
@@ -30,12 +33,28 @@ public class LaptopRecordXMLFile implements LaptopRecord {
 
     @Override
     public boolean writeFile() {
-        return false;
+        try {
+            XmlMapper xmlMapper = new XmlMapper();
+            xmlMapper.writeValue(file, laptops);
+        } catch (Exception e) {
+            return false;
+        }
+
+        return true;
     }
 
     @Override
     public ArrayList<Laptop> readFile() {
-        return null;
+        ArrayList<Laptop> laptops;
+
+        try {
+            XmlMapper xmlMapper = new XmlMapper();
+            laptops = xmlMapper.readValue(file, new TypeReference<>() {});
+        } catch (Exception e) {
+            return null;
+        }
+
+        return laptops;
     }
 
     @Override

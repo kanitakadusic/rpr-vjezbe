@@ -1,5 +1,8 @@
 package ba.unsa.etf.rpr;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
@@ -30,12 +33,28 @@ public class LaptopRecordJSONFile implements LaptopRecord {
 
     @Override
     public boolean writeFile() {
-        return false;
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writeValue(file, laptops);
+        } catch (Exception e) {
+            return false;
+        }
+
+        return true;
     }
 
     @Override
     public ArrayList<Laptop> readFile() {
-        return null;
+        ArrayList<Laptop> laptops;
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            laptops = objectMapper.readValue(file, new TypeReference<>() {});
+        } catch (Exception e) {
+            return null;
+        }
+
+        return laptops;
     }
 
     @Override
