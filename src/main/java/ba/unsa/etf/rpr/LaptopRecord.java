@@ -3,12 +3,12 @@ package ba.unsa.etf.rpr;
 import java.util.ArrayList;
 
 public interface LaptopRecord {
-    void addToList(Laptop laptop);
-    void addAllToList(ArrayList<Laptop> laptops);
-    void clearList();
+    void add(Laptop laptop);
+    void addAll(ArrayList<Laptop> laptops);
+    void clear();
 
-    boolean writeToFile();
-    ArrayList<Laptop> readFromFile();
+    boolean writeFile();
+    ArrayList<Laptop> readFile();
 
     Laptop getLaptop(String cpu) throws InvalidCpuException;
 }

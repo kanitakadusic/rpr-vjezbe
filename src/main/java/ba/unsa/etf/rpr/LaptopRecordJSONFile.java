@@ -14,27 +14,27 @@ public class LaptopRecordJSONFile implements LaptopRecord {
     }
 
     @Override
-    public void addToList(Laptop laptop) {
+    public void add(Laptop laptop) {
         laptops.add(laptop);
     }
 
     @Override
-    public void addAllToList(ArrayList<Laptop> laptops) {
+    public void addAll(ArrayList<Laptop> laptops) {
         this.laptops.addAll(laptops);
     }
 
     @Override
-    public void clearList() {
+    public void clear() {
         laptops.clear();
     }
 
     @Override
-    public boolean writeToFile() {
+    public boolean writeFile() {
         return false;
     }
 
     @Override
-    public ArrayList<Laptop> readFromFile() {
+    public ArrayList<Laptop> readFile() {
         return null;
     }
 
