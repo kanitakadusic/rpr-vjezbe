@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr;
 
-import java.io.File;
+import java.io.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -29,13 +29,12 @@ public class LaptopRecordSerializableFile implements LaptopRecord {
     }
 
     @Override
-    public void addToFile(Laptop laptop) {
-
+    public boolean writeToFile() {
+        return false;
     }
 
     @Override
-    public ArrayList<Laptop> getFileData() {
-
+    public ArrayList<Laptop> readFromFile() {
         return null;
     }
 

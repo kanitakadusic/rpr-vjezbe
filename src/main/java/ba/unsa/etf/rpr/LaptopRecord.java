@@ -7,8 +7,8 @@ public interface LaptopRecord {
     void addAllToList(ArrayList<Laptop> laptops);
     void clearList();
 
-    void addToFile(Laptop laptop);
-    ArrayList<Laptop> getFileData();
+    boolean writeToFile();
+    ArrayList<Laptop> readFromFile();
 
     Laptop getLaptop(String cpu) throws InvalidCpuException;
 }

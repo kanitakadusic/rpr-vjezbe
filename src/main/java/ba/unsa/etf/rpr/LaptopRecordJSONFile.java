@@ -29,13 +29,12 @@ public class LaptopRecordJSONFile implements LaptopRecord {
     }
 
     @Override
-    public void addToFile(Laptop laptop) {
-
+    public boolean writeToFile() {
+        return false;
     }
 
     @Override
-    public ArrayList<Laptop> getFileData() {
-
+    public ArrayList<Laptop> readFromFile() {
         return null;
     }
 
