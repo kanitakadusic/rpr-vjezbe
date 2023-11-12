@@ -30,12 +30,30 @@ public class LaptopRecordSerializableFile implements LaptopRecord {
 
     @Override
     public boolean writeFile() {
-        return false;
+        try {
+            ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(file.getPath()));
+            stream.writeObject(laptops);
+            stream.close();
+        } catch (Exception e) {
+            return false;
+        }
+
+        return true;
     }
 
     @Override
     public ArrayList<Laptop> readFile() {
-        return null;
+        ArrayList<Laptop> laptops;
+
+        try {
+            ObjectInputStream stream = new ObjectInputStream(new FileInputStream(file.getPath()));
+            laptops = (ArrayList<Laptop>) stream.readObject();
+            stream.close();
+        } catch (Exception e) {
+            return null;
+        }
+
+        return laptops;
     }
 
     @Override
