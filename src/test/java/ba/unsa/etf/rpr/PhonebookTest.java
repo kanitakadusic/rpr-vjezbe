@@ -57,6 +57,7 @@ class PhonebookTest {
 
     @Test
     public void onLetterException() {
-        assertThrows(InvalidParametersException.class, () -> this.phonebook.onLetter('0'));
+        Throwable exception = assertThrows(InvalidParametersException.class, () -> this.phonebook.onLetter('0'));
+        assertEquals("0 is not a letter.", exception.getMessage());
     }
 }
