@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr;
 
-public class Pearson implements Printable {
+public class Pearson implements Printable, CanEvaluate {
     private String name, surname;
 
     public Pearson(String name, String surname) {
@@ -27,5 +27,10 @@ public class Pearson implements Printable {
     @Override
     public String getInfo() {
         return getName() + " " + getSurname();
+    }
+
+    @Override
+    public Evaluation evaluate(int grade) {
+        return new Evaluation(this, grade);
     }
 }

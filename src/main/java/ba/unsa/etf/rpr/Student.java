@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr;
 
-public class Student extends Pearson implements Printable {
+public class Student extends Pearson implements Printable, CanEvaluate {
     private int year;
     private String index;
 
