@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr;
 
 import java.util.ArrayList;
 
-public class Teacher extends Pearson implements Printable, CanEvaluate {
+public class Teacher extends Pearson implements Printable, CanEvaluate, Evaluable {
     private String title;
     private ArrayList<Evaluation> evaluations;
 

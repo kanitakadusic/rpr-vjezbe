@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr;
 
 import java.util.ArrayList;
 
-public class Subject implements Printable {
+public class Subject implements Printable, Evaluable {
     private String name, description;
     private ArrayList<Evaluation> evaluations;
 
