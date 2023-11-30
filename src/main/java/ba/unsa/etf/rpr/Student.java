@@ -27,8 +27,7 @@ public class Student extends Pearson implements Printable {
     }
 
     @Override
-    public void printInfo() {
-        super.printInfo();
-        System.out.println(getYear() + " " + getIndex());
+    public String getInfo() {
+        return super.getInfo() + " " + getYear() + " " + getIndex();
     }
 }

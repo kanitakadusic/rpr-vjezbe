@@ -24,7 +24,7 @@ public class Subject implements Printable {
     }
 
     @Override
-    public void printInfo() {
-        System.out.println(getName() + " " + getDescription());
+    public String getInfo() {
+        return getName() + " " + getDescription();
     }
 }

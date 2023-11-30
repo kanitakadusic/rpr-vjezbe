@@ -17,8 +17,7 @@ public class Teacher extends Pearson implements Printable {
     }
 
     @Override
-    public void printInfo() {
-        super.printInfo();
-        System.out.println(getTitle());
+    public String getInfo() {
+        return super.getInfo() + " " + getTitle();
     }
 }

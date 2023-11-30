@@ -25,7 +25,7 @@ public class Pearson implements Printable {
     }
 
     @Override
-    public void printInfo() {
-        System.out.println(getName() + " " + getSurname());
+    public String getInfo() {
+        return getName() + " " + getSurname();
     }
 }
