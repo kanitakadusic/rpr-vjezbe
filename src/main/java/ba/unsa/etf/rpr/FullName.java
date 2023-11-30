@@ -3,13 +3,9 @@ package ba.unsa.etf.rpr;
 import java.util.ArrayList;
 
 public class FullName {
-    private ArrayList<String> fullNames;
+    private final ArrayList<String> fullNames;
 
-    public ArrayList<String> getFullNames() {
-        return fullNames;
-    }
-
-    public void setFullNames(ArrayList<String> fullNames) {
+    public FullName(ArrayList<String> fullNames) {
         this.fullNames = fullNames;
     }
 
