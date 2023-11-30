@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr;
 
 import java.util.ArrayList;
 
-public class NameSurname {
+public class NameSurname implements MyCollection {
     private final ArrayList<String> names, surnames;
 
     public NameSurname(ArrayList<String> names, ArrayList<String> surnames) {
