@@ -21,4 +21,9 @@ public class Evaluation {
         if (grade < 1 || grade > 10) throw new IllegalArgumentException("Illegal grade value");
         this.grade = grade;
     }
+
+    @Override
+    public String toString() {
+        return grade + "";
+    }
 }
