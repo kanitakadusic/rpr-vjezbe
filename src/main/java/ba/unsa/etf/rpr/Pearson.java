@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr;
 
-public class Pearson {
+public class Pearson implements Printable {
     private String name, surname;
 
     public Pearson(String name, String surname) {
@@ -22,5 +22,10 @@ public class Pearson {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    @Override
+    public void printInfo() {
+        System.out.println(getName() + " " + getSurname());
     }
 }

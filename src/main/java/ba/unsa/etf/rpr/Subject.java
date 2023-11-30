@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr;
 
-public class Subject {
+public class Subject implements Printable {
     private String name, description;
 
     public Subject(String name) {
@@ -21,5 +21,10 @@ public class Subject {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public void printInfo() {
+        System.out.println(getName() + " " + getDescription());
     }
 }

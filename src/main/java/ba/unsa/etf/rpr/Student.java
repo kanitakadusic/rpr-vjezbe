@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr;
 
-public class Student extends Pearson {
+public class Student extends Pearson implements Printable {
     private int year;
     private String index;
 
@@ -24,5 +24,11 @@ public class Student extends Pearson {
 
     public void setIndex(String index) {
         this.index = index;
+    }
+
+    @Override
+    public void printInfo() {
+        super.printInfo();
+        System.out.println(getYear() + " " + getIndex());
     }
 }
